@@ -31,45 +31,23 @@ var nTrain = new Train('The N Train', nStations);
 var sixTrain = new Train('The Six Train', sixStations);
 var gTrain = new Train('The G Train', gStations);
 
-var trains = [lTrain, nTrain, sixTrain, gTrain, sTrain];
+// var trains = [lTrain, nTrain, sixTrain, gTrain, sTrain];
 
-var msg = "Which train would you \nlike to get on?" + displayLines();
-var startTrain = prompt(msg);
+// var msg = "Which train would you \nlike to get on?" + displayLines();
+// var startTrain = prompt(msg);
 
 var trains = [lTrain, nTrain, sixTrain, gTrain];
 
 var msg = "Which train would you \nlike to get on?\n" + displayLines();
 var startTrain = prompt(msg);
 
+
 function displayLines() {
   var trainNames = "";
-  for (var i = 0; i < trains.length; i++) {
-    trainNames += trains[i].name + "\n";
-  }
-
-  forEach(trains, trainName);
-
+  _.each(trains, function(train){ trainNames += (train.name)+ "\n";});
   return trainNames.trim();
-}
+};
 
-
-function trainName(train){
-  return train.name + "\n"
-}
-
-function forEach(array, func) {
-  for (var i = 0; i < array.length; i++) {
-    func(array[i]);
-  }
-}
-
-function map(array, func) {
-  var newArray = [];
-  for (var i = 0; i < array.length; i++) {
-    newArray.push(func(array[i]));
-  }
-  return newArray;
-}
 
 function displayStations() {
   var train = null;
@@ -77,13 +55,28 @@ function displayStations() {
     if (trains[j].name === startTrain) {
       train = trains[j];
     }
-  }
   var trainStations = "";
-  for (var k = 0; k < train.stations.length; k++) {
-    trainStations += train.stations[k] + "\n";
+  _.each(trains, function(train){trainStations += (train.stations)+ "\n";});
   }
   return trainStations.trim();
-}
+};
 
 var msg2 = "Which station would you \nlike to get on?\n" + displayStations();
 var startStation = prompt(msg2);
+
+
+var msg3 = "Which train would you \nlike to end up on?\n" + displayLines();
+var EndLine = prompt(msg3);
+
+
+var msg4 = "Which station would you \nlike to get off at? \n" + displayStations();
+var endStation = prompt
+
+// Find the intersection of on the route
+
+// find the intersection of the give arrays
+// then
+
+ // for (var k = 0; k < train.stations.length; k++) {
+ //    trainStations += train.stations[k] + "\n";
+
